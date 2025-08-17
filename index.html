@@ -598,9 +598,16 @@
   <script>
     // Landing page interaction
     document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, initializing solar explorer...');
       const sunLanding = document.getElementById('sun-landing');
       const landingPage = document.querySelector('.landing-page');
       const mainExplorer = document.querySelector('.main-explorer');
+      
+      console.log('Elements found:', {
+        sunLanding: !!sunLanding,
+        landingPage: !!landingPage, 
+        mainExplorer: !!mainExplorer
+      });
       
       if (sunLanding && landingPage && mainExplorer) {
         // Add click event listener
@@ -609,6 +616,8 @@
           console.log('Sun clicked - starting explorer');
           landingPage.classList.add('hidden');
           mainExplorer.classList.add('visible');
+          console.log('Main explorer visible class added');
+          console.log('Main explorer classes:', mainExplorer.className);
         });
         
         // Add touch event for mobile
@@ -617,6 +626,7 @@
           console.log('Sun touched - starting explorer');
           landingPage.classList.add('hidden');
           mainExplorer.classList.add('visible');
+          console.log('Main explorer visible class added via touch');
         });
         
         // Add touchend to prevent conflicts
@@ -631,6 +641,7 @@
             console.log('Sun activated via keyboard - starting explorer');
             landingPage.classList.add('hidden');
             mainExplorer.classList.add('visible');
+            console.log('Main explorer visible class added via keyboard');
           }
         });
         
@@ -640,26 +651,78 @@
         sunLanding.setAttribute('aria-label', 'Click to start exploring the solar system');
       }
       
-      // Moon interaction for Earth's moon
+      // Moon interactions for all moons
+      const moonSelects = document.querySelectorAll('input.moon-select');
+      console.log('Found moon selectors:', moonSelects.length);
+      
+      moonSelects.forEach(moonSelect => {
+        const moonLabel = document.querySelector(`label[for="${moonSelect.id}"]`);
+        
+        if (moonLabel) {
+          // Add click handler to moon labels
+          moonLabel.addEventListener('click', function(e) {
+            console.log(`Moon ${moonSelect.id} clicked`);
+            e.preventDefault();
+            moonSelect.checked = true;
+            moonSelect.dispatchEvent(new Event('change'));
+          });
+          
+          // Add touch support
+          moonLabel.addEventListener('touchstart', function(e) {
+            console.log(`Moon ${moonSelect.id} touched`);
+            e.preventDefault();
+            moonSelect.checked = true;
+            moonSelect.dispatchEvent(new Event('change'));
+          });
+          
+          // Make focusable
+          moonLabel.setAttribute('tabindex', '0');
+          moonLabel.setAttribute('role', 'radio');
+          moonLabel.setAttribute('aria-label', `Select ${moonSelect.id} moon`);
+          
+          // Add change listener
+          moonSelect.addEventListener('change', function() {
+            console.log(`Moon ${moonSelect.id} changed, checked:`, this.checked);
+          });
+        }
+      });
+      
+      // Special handling for Earth's moon and read more connection
       const earthMoonSelect = document.getElementById('earth-moon');
       const earthMoonRead = document.getElementById('readEarthMoon');
       
       if (earthMoonSelect && earthMoonRead) {
         earthMoonSelect.addEventListener('change', function() {
           if (this.checked) {
+            console.log('Earth moon selected, enabling read more');
             earthMoonRead.checked = true;
           }
         });
       }
       
-      // Add touch support for all planet labels
+      // Add touch support and click handlers for all planet labels
       const planetLabels = document.querySelectorAll('label.menu');
+      console.log('Found planet labels:', planetLabels.length);
+      
       planetLabels.forEach(label => {
         const forId = label.getAttribute('for');
         const radioButton = document.getElementById(forId);
         
+        console.log(`Label for: ${forId}, Radio found:`, !!radioButton);
+        
         if (radioButton) {
+          // Add click event listener
+          label.addEventListener('click', function(e) {
+            console.log(`Clicked on label for ${forId}`);
+            e.preventDefault();
+            radioButton.checked = true;
+            // Trigger change event manually for consistency
+            radioButton.dispatchEvent(new Event('change'));
+          });
+          
+          // Add touch support
           label.addEventListener('touchstart', function(e) {
+            console.log(`Touched label for ${forId}`);
             e.preventDefault();
             radioButton.checked = true;
             // Trigger change event manually for consistency
@@ -668,6 +731,71 @@
           
           label.addEventListener('touchend', function(e) {
             e.preventDefault();
+          });
+          
+          // Add keyboard support
+          label.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              console.log(`Keyboard activated label for ${forId}`);
+              e.preventDefault();
+              radioButton.checked = true;
+              radioButton.dispatchEvent(new Event('change'));
+            }
+          });
+          
+          // Make labels focusable
+          label.setAttribute('tabindex', '0');
+          label.setAttribute('role', 'radio');
+          label.setAttribute('aria-label', `Select ${forId.charAt(0).toUpperCase() + forId.slice(1)}`);
+          
+          // Add change listener to radio button to monitor state changes
+          radioButton.addEventListener('change', function() {
+            console.log(`Radio button ${forId} changed, checked:`, this.checked);
+          });
+        }
+      });
+      
+      // Also add listeners to all radio buttons to monitor changes
+      const allRadios = document.querySelectorAll('input[type="radio"][name="planet"]');
+      console.log('Found radio buttons:', allRadios.length);
+      allRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+          console.log(`Radio ${this.id} changed to checked:`, this.checked);
+        });
+      });
+      
+      // Add functionality for "Read More" buttons
+      const readMoreLabels = document.querySelectorAll('label[for^="read"]');
+      console.log('Found read more labels:', readMoreLabels.length);
+      
+      readMoreLabels.forEach(label => {
+        const forId = label.getAttribute('for');
+        const readRadio = document.getElementById(forId);
+        
+        if (readRadio) {
+          label.addEventListener('click', function(e) {
+            console.log(`Read more clicked for ${forId}`);
+            e.preventDefault();
+            readRadio.checked = !readRadio.checked;
+            readRadio.dispatchEvent(new Event('change'));
+          });
+          
+          // Add touch support
+          label.addEventListener('touchstart', function(e) {
+            console.log(`Read more touched for ${forId}`);
+            e.preventDefault();
+            readRadio.checked = !readRadio.checked;
+            readRadio.dispatchEvent(new Event('change'));
+          });
+          
+          // Make focusable
+          label.setAttribute('tabindex', '0');
+          label.setAttribute('role', 'button');
+          label.setAttribute('aria-label', `Read more about ${forId.replace('read', '')}`);
+          
+          // Add change listener
+          readRadio.addEventListener('change', function() {
+            console.log(`Read radio ${forId} changed, checked:`, this.checked);
           });
         }
       });
