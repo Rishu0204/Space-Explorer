@@ -347,6 +347,11 @@ body .overlay {
 }
 body input[type=radio][name=planet] {
   appearance: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 body input[type=radio][name=planet]::after {
   content: "";
@@ -479,6 +484,11 @@ body input[type=radio][name=planet].planet1:checked + label > .info h3 {
 }
 body input[type=radio][name=planet] {
   appearance: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 body input[type=radio][name=planet]::after {
   content: "";
@@ -614,6 +624,11 @@ body input[type=radio][name=planet].planet2:checked + label > .info h3 {
 }
 body input[type=radio][name=planet] {
   appearance: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 body input[type=radio][name=planet]::after {
   content: "";
@@ -752,6 +767,11 @@ body input[type=radio][name=planet].planet3:checked + label > .info h3 {
 }
 body input[type=radio][name=planet] {
   appearance: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 body input[type=radio][name=planet]::after {
   content: "";
@@ -893,6 +913,11 @@ body input[type=radio][name=planet].planet4:checked + label > .info h3 {
 }
 body input[type=radio][name=planet] {
   appearance: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 body input[type=radio][name=planet]::after {
   content: "";
@@ -1037,6 +1062,11 @@ body input[type=radio][name=planet].planet5:checked + label > .info h3 {
 }
 body input[type=radio][name=planet] {
   appearance: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 body input[type=radio][name=planet]::after {
   content: "";
@@ -1184,6 +1214,11 @@ body input[type=radio][name=planet].planet6:checked + label > .info h3 {
 }
 body input[type=radio][name=planet] {
   appearance: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 body input[type=radio][name=planet]::after {
   content: "";
@@ -1334,6 +1369,11 @@ body input[type=radio][name=planet].planet7:checked + label > .info h3 {
 }
 body input[type=radio][name=planet] {
   appearance: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 body input[type=radio][name=planet]::after {
   content: "";
@@ -1487,6 +1527,11 @@ body input[type=radio][name=planet].planet8:checked + label > .info h3 {
 }
 body input[type=radio][name=planet] {
   appearance: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 body input[type=radio][name=planet]::after {
   content: "";
