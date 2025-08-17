@@ -2280,13 +2280,17 @@ body .panel p {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  transition: opacity 1s ease-out, visibility 1s ease-out;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s ease-out, visibility 0.8s ease-out, transform 0.8s ease-out;
+  transform: scale(1);
 }
 
 .landing-page.hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: scale(0.95);
 }
 
 .landing-title {
@@ -2322,11 +2326,23 @@ body .panel p {
   width: 200px;
   height: 200px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  user-select: none;
 }
 
 .sun:hover {
   transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.sun:active {
+  transform: scale(1.05);
+  filter: brightness(1.4);
+}
+
+.sun:focus {
+  outline: 3px solid rgba(255, 235, 59, 0.7);
+  outline-offset: 10px;
 }
 
 .sun-core {
@@ -2386,12 +2402,14 @@ body .panel p {
 .main-explorer {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s ease-in, visibility 1s ease-in;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-in 0.2s, visibility 0.8s ease-in 0.2s, transform 0.8s ease-in 0.2s;
 }
 
 .main-explorer.visible {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 /* Sun Navigation Styles */
@@ -2417,23 +2435,65 @@ body .solar_systm .planet.sun {
 }
 
 body .solar_systm .planet.sun .planet_description {
-  background: rgba(0, 0, 0, 0.95);
-  border-radius: 10px;
-  padding: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid rgba(255, 235, 59, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 50px rgba(255, 235, 59, 0.3), 
+              0 0 100px rgba(0, 0, 0, 0.8) inset;
+  position: relative;
+  z-index: 10;
+}
+
+body .solar_systm .planet.sun .planet_description::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffeb3b, #ff9800, #ff5722, #ffeb3b);
+  border-radius: 15px;
+  z-index: -1;
+  opacity: 0.3;
 }
 
 body .solar_systm .planet.sun .planet_description p {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+body .solar_systm .planet.sun .planet_description h1 {
+  color: #ffeb3b;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 body .solar_systm .planet.sun .planet_description h2 {
-  color: #ffeb3b;
+  color: #ff9800;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 body .solar_systm .planet.sun .planet_description a {
-  color: #ff9800;
+  color: #ffeb3b;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  border: 1px solid #ffeb3b;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+body .solar_systm .planet.sun .planet_description a:hover {
+  background: #ffeb3b;
+  color: #000;
+  box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
 }
 
 @keyframes sunPulse {
@@ -2490,6 +2550,47 @@ body:has(.landing-page #sun-landing:active) .landing-page {
 body:has(.landing-page #sun-landing:active) .main-explorer {
   opacity: 1;
   visibility: visible;
+}
+
+/* Navbar Menu Positioning */
+.main-explorer label.menu.sun {
+  top: 80px;
+}
+
+.main-explorer label.menu.mercury {
+  top: 120px;
+}
+
+.main-explorer label.menu.venus {
+  top: 160px;
+}
+
+.main-explorer label.menu.earth {
+  top: 200px;
+}
+
+.main-explorer label.menu.mars {
+  top: 240px;
+}
+
+.main-explorer label.menu.jupiter {
+  top: 280px;
+}
+
+.main-explorer label.menu.saturn {
+  top: 320px;
+}
+
+.main-explorer label.menu.uranus {
+  top: 360px;
+}
+
+.main-explorer label.menu.neptune {
+  top: 400px;
+}
+
+.main-explorer label.menu.pluto {
+  top: 440px;
 }
 
 /* Sun Planet Interaction (similar to other planets) */

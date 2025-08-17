@@ -21,12 +21,14 @@
     </div>
   </div>
 
-    <!-- Main Navigation (hidden initially) -->
+  <!-- Main Navigation (hidden initially) -->
   <div class='main-explorer'>
     <h1 class='logo'>
       Solar explorer
       <span>in only CSS</span>
     </h1>
+    
+    <!-- Sun -->
     <input class='star' id='sun' type='radio' name='planet'>
     <label class='menu sun' for='sun'>
       <div class='preview'></div>
@@ -38,105 +40,123 @@
         <h3>0 AU</h3>
       </div>
     </label>
+    
+    <!-- Mercury -->
+    <input class='planet1' id='mercury' type='radio' name='planet'>
+    <label class='menu mercury' for='mercury'>
+      <div class='preview'></div>
+      <div class='info'>
+        <h2>
+          <div class='pip'></div>
+          Mercury
+        </h2>
+        <h3>0.39 AU</h3>
+      </div>
+    </label>
+    
+    <!-- Venus -->
+    <input class='planet2' id='venus' type='radio' name='planet'>
+    <label class='menu venus' for='venus'>
+      <div class='preview'></div>
+      <div class='info'>
+        <h2>
+          <div class='pip'></div>
+          Venus
+        </h2>
+        <h3>0.723 AU</h3>
+      </div>
+    </label>
+    
+    <!-- Earth -->
+    <input class='planet3' id='earth' type='radio' name='planet'>
+    <label class='earth menu' for='earth'>
+      <div class='preview'></div>
+      <div class='info'>
+        <h2>
+          <div class='pip'></div>
+          Earth
+        </h2>
+        <h3>1 AU</h3>
+      </div>
+    </label>
+    
+    <!-- Mars -->
+    <input class='planet4' id='mars' type='radio' name='planet'>
+    <label class='mars menu' for='mars'>
+      <div class='preview'></div>
+      <div class='info'>
+        <h2>
+          <div class='pip'></div>
+          Mars
+        </h2>
+        <h3>1.524 AU</h3>
+      </div>
+    </label>
+    
+    <!-- Jupiter -->
+    <input class='planet5' id='jupiter' type='radio' name='planet'>
+    <label class='jupiter menu' for='jupiter'>
+      <div class='preview'></div>
+      <div class='info'>
+        <h2>
+          <div class='pip'></div>
+          Jupiter
+        </h2>
+        <h3>5.203 AU</h3>
+      </div>
+    </label>
+    
+    <!-- Saturn -->
+    <input class='planet6' id='saturn' type='radio' name='planet'>
+    <label class='menu saturn' for='saturn'>
+      <div class='preview'></div>
+      <div class='info'>
+        <h2>
+          <div class='pip'></div>
+          Saturn
+        </h2>
+        <h3>9.539 AU</h3>
+      </div>
+    </label>
+    
+    <!-- Uranus -->
+    <input class='planet7' id='uranus' type='radio' name='planet'>
+    <label class='menu uranus' for='uranus'>
+      <div class='preview'></div>
+      <div class='info'>
+        <h2>
+          <div class='pip'></div>
+          Uranus
+        </h2>
+        <h3>19.18 AU</h3>
+      </div>
+    </label>
+    
+    <!-- Neptune -->
+    <input class='planet8' id='neptune' type='radio' name='planet'>
+    <label class='menu neptune' for='neptune'>
+      <div class='preview'></div>
+      <div class='info'>
+        <h2>
+          <div class='pip'></div>
+          Neptune
+        </h2>
+        <h3>30.06 AU</h3>
+      </div>
+    </label>
+    
+    <!-- Pluto -->
     <input class='planet9' id='pluto' type='radio' name='planet'>
-  <label class='menu pluto' for='pluto'>
-    <div class='preview'></div>
-    <div class='info'>
-      <h2>
-        <div class='pip'></div>
-        Pluto
-      </h2>
-      <h3>39.5 AU</h3>
-    </div>
-  </label>
-  <input class='planet8' id='neptune' type='radio' name='planet'>
-  <label class='menu neptune' for='neptune'>
-    <div class='preview'></div>
-    <div class='info'>
-      <h2>
-        <div class='pip'></div>
-        Neptune
-      </h2>
-      <h3>30.06 AU</h3>
-    </div>
-  </label>
-  <input class='planet7' id='uranus' type='radio' name='planet'>
-  <label class='menu uranus' for='uranus'>
-    <div class='preview'></div>
-    <div class='info'>
-      <h2>
-        <div class='pip'></div>
-        Uranus
-      </h2>
-      <h3>19.18 AU</h3>
-    </div>
-  </label>
-  <input class='planet6' id='saturn' type='radio' name='planet'>
-  <label class='menu saturn' for='saturn'>
-    <div class='preview'></div>
-    <div class='info'>
-      <h2>
-        <div class='pip'></div>
-        Saturn
-      </h2>
-      <h3>9.539 AU</h3>
-    </div>
-  </label>
-  <input class='planet5' id='jupiter' type='radio' name='planet'>
-  <label class='jupiter menu' for='jupiter'>
-    <div class='preview'></div>
-    <div class='info'>
-      <h2>
-        <div class='pip'></div>
-        Jupiter
-      </h2>
-      <h3>5.203 AU</h3>
-    </div>
-  </label>
-  <input class='planet4' id='mars' type='radio' name='planet' checked='checked'>
-  <label class='mars menu' for='mars'>
-    <div class='preview'></div>
-    <div class='info'>
-      <h2>
-        <div class='pip'></div>
-        Mars
-      </h2>
-      <h3>1.524 AU</h3>
-    </div>
-  </label>
-  <input class='planet3' id='earth' type='radio' name='planet' checked='checked'>
-  <label class='earth menu' for='earth'>
-    <div class='preview'></div>
-    <div class='info'>
-      <h2>
-        <div class='pip'></div>
-        Earth
-      </h2>
-      <h3>1 AU</h3>
-    </div>
-  </label>
-  <input class='planet2' id='venus' type='radio' name='planet' checked='checked'>
-  <label class='menu venus' for='venus'>
-    <div class='preview'></div>
-    <div class='info'>
-      <h2>
-        <div class='pip'></div>
-        Venus
-      </h2>
-      <h3>0.723 AU</h3>
-    </div>
-  </label>
-  <input class='planet1' id='mercury' type='radio' name='planet' checked='checked'>
-  <label class='menu mercury' for='mercury'>
-    <div class='preview'></div>
-    <div class='info'>
-      <h2>
-        <div class='pip'></div>
-        Mercury
-      </h2>
-      <h3>0.39 AU</h3>
-    </div>
-  </label>
+    <label class='menu pluto' for='pluto'>
+      <div class='preview'></div>
+      <div class='info'>
+        <h2>
+          <div class='pip'></div>
+          Pluto
+        </h2>
+        <h3>39.5 AU</h3>
+      </div>
+    </label>
   </div> <!-- End main-explorer -->
 
   <div class='solar'>
@@ -582,11 +602,37 @@
       const landingPage = document.querySelector('.landing-page');
       const mainExplorer = document.querySelector('.main-explorer');
       
-      if (sunLanding) {
-        sunLanding.addEventListener('click', function() {
+      if (sunLanding && landingPage && mainExplorer) {
+        // Add click event listener
+        sunLanding.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Sun clicked - starting explorer');
           landingPage.classList.add('hidden');
           mainExplorer.classList.add('visible');
         });
+        
+        // Add touch event for mobile
+        sunLanding.addEventListener('touchstart', function(e) {
+          e.preventDefault();
+          console.log('Sun touched - starting explorer');
+          landingPage.classList.add('hidden');
+          mainExplorer.classList.add('visible');
+        });
+        
+        // Add keyboard support
+        sunLanding.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            console.log('Sun activated via keyboard - starting explorer');
+            landingPage.classList.add('hidden');
+            mainExplorer.classList.add('visible');
+          }
+        });
+        
+        // Make sun focusable
+        sunLanding.setAttribute('tabindex', '0');
+        sunLanding.setAttribute('role', 'button');
+        sunLanding.setAttribute('aria-label', 'Click to start exploring the solar system');
       }
       
       // Moon interaction for Earth's moon
