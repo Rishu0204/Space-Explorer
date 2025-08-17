@@ -619,6 +619,11 @@
           mainExplorer.classList.add('visible');
         });
         
+        // Add touchend to prevent conflicts
+        sunLanding.addEventListener('touchend', function(e) {
+          e.preventDefault();
+        });
+        
         // Add keyboard support
         sunLanding.addEventListener('keydown', function(e) {
           if (e.key === 'Enter' || e.key === ' ') {
@@ -646,6 +651,26 @@
           }
         });
       }
+      
+      // Add touch support for all planet labels
+      const planetLabels = document.querySelectorAll('label.menu');
+      planetLabels.forEach(label => {
+        const forId = label.getAttribute('for');
+        const radioButton = document.getElementById(forId);
+        
+        if (radioButton) {
+          label.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            radioButton.checked = true;
+            // Trigger change event manually for consistency
+            radioButton.dispatchEvent(new Event('change'));
+          });
+          
+          label.addEventListener('touchend', function(e) {
+            e.preventDefault();
+          });
+        }
+      });
     });
   </script>
 </body>
