@@ -166,7 +166,6 @@ body label.menu {
   cursor: pointer;
   left: 90px;
   z-index: 2;
-  z-index: 2;
 }
 body label.menu:after {
   display: block;
@@ -341,7 +340,6 @@ body .overlay {
   transform: none;
   top: -240px;
   left: -303px;
-  opacity: 1;
   opacity: 1;
   border-radius: 100%;
   z-index: 0;
