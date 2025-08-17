@@ -2494,7 +2494,8 @@ body .solar_systm .planet.sun {
   animation: sunPulse 4s ease-in-out infinite;
 }
 
-body .solar_systm .planet.sun .planet_description {
+body .solar_systm .planet.sun .planet_description,
+body .solar_systm .planet.sun .sun_description {
   background: rgba(0, 0, 0, 0.9);
   border: 2px solid rgba(255, 235, 59, 0.3);
   border-radius: 15px;
@@ -2506,7 +2507,8 @@ body .solar_systm .planet.sun .planet_description {
   z-index: 10;
 }
 
-body .solar_systm .planet.sun .planet_description::before {
+body .solar_systm .planet.sun .planet_description::before,
+body .solar_systm .planet.sun .sun_description::before {
   content: '';
   position: absolute;
   top: -2px;
@@ -2519,28 +2521,32 @@ body .solar_systm .planet.sun .planet_description::before {
   opacity: 0.3;
 }
 
-body .solar_systm .planet.sun .planet_description p {
+body .solar_systm .planet.sun .planet_description p,
+body .solar_systm .planet.sun .sun_description p {
   color: rgba(255, 255, 255, 1);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   font-weight: 400;
   line-height: 1.6;
 }
 
-body .solar_systm .planet.sun .planet_description h1 {
+body .solar_systm .planet.sun .planet_description h1,
+body .solar_systm .planet.sun .sun_description h1 {
   color: #ffeb3b;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   font-size: 3rem;
   margin-bottom: 10px;
 }
 
-body .solar_systm .planet.sun .planet_description h2 {
+body .solar_systm .planet.sun .planet_description h2,
+body .solar_systm .planet.sun .sun_description h2 {
   color: #ff9800;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
-body .solar_systm .planet.sun .planet_description a {
+body .solar_systm .planet.sun .planet_description a,
+body .solar_systm .planet.sun .sun_description a {
   color: #ffeb3b;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   text-decoration: none;
@@ -2550,7 +2556,8 @@ body .solar_systm .planet.sun .planet_description a {
   transition: all 0.3s ease;
 }
 
-body .solar_systm .planet.sun .planet_description a:hover {
+body .solar_systm .planet.sun .planet_description a:hover,
+body .solar_systm .planet.sun .sun_description a:hover {
   background: #ffeb3b;
   color: #000;
   box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
