@@ -131,6 +131,11 @@ body .logo span {
 }
 body label {
   cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+body label:hover {
+  transform: scale(1.02);
 }
 body label.mercury > .preview {
   background: url("https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg") !important;
@@ -165,7 +170,14 @@ body label.menu {
   position: absolute;
   cursor: pointer;
   left: 90px;
-  z-index: 2;
+  z-index: 20;
+  pointer-events: auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+body label.menu:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 body label.menu:after {
   display: block;
@@ -2450,6 +2462,8 @@ body .panel p {
   visibility: hidden;
   transform: translateY(20px);
   transition: opacity 0.8s ease-in 0.2s, visibility 0.8s ease-in 0.2s, transform 0.8s ease-in 0.2s;
+  position: relative;
+  z-index: 10;
 }
 
 .main-explorer.visible {
